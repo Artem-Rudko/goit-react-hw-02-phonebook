@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import ContactForm from './components/ContactForm';
+import ContactList from './components/ContactList/ContactList';
 import { v4 as uuidv4 } from 'uuid';
 // import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm onSubmit={this.addNewContact} />
                 <h2>Contacts</h2>
+                <ContactList contacts={this.state.contacts} />
             </div>
         );
     }
