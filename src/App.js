@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList/ContactList';
+import Filter from './components/Filter/Filter';
 import { v4 as uuidv4 } from 'uuid';
 // import './App.css';
 
@@ -25,13 +26,26 @@ class App extends Component {
         }));
     };
 
+    changeFilter = e => {
+        this.setState({ filter: e.currentTarget.value });
+    };
+
     render() {
+        const normalizedFilter = this.state.filter.toLowerCase();
+        const filteredContacts = this.state.contacts.filter(contact =>
+            contact.name.toLowerCase().includes(normalizedFilter),
+        );
+
         return (
             <div className="App">
                 <h1>Phonebook</h1>
                 <ContactForm onSubmit={this.addNewContact} />
                 <h2>Contacts</h2>
-                <ContactList contacts={this.state.contacts} />
+                <Filter
+                    value={this.state.filter}
+                    onChange={this.changeFilter}
+                />
+                <ContactList contacts={filteredContacts} />
             </div>
         );
     }
