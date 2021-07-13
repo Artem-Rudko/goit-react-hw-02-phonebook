@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 class ContactForm extends Component {
     state = {
@@ -14,12 +13,7 @@ class ContactForm extends Component {
     };
 
     handleSubmit = e => {
-        let setId = uuidv4();
-
-        console.log('submit');
-        console.log('id: ', setId);
         e.preventDefault();
-        this.setState({ id: 'id-55' });
         this.props.onSubmit(this.state);
         this.reset();
     };
@@ -41,6 +35,7 @@ class ContactForm extends Component {
                         type="text"
                         name="name"
                         value={this.state.name}
+                        placeholder="i.e. James Bond"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
                         required
@@ -53,6 +48,7 @@ class ContactForm extends Component {
                         type="tel"
                         name="number"
                         value={this.state.number}
+                        placeholder="i.e. 007-00-00"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
                         required

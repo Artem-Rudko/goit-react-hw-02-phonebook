@@ -16,14 +16,12 @@ class App extends Component {
     };
 
     addNewContact = data => {
-        console.log(data);
         const newContact = {
             ...data,
             id: uuidv4(),
         };
-        console.log(newContact);
-        this.setState(prevState => ({
-            contacts: [...prevState.contacts, newContact],
+        this.setState(({ contacts }) => ({
+            contacts: [newContact, ...contacts],
         }));
     };
 
