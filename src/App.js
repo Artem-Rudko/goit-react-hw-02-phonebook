@@ -17,18 +17,30 @@ class App extends Component {
     };
 
     addNewContact = data => {
+        const normilizedData = data.name.toLowerCase();
+        const dublicate = this.state.contacts.find(
+            contact => contact.name.toLowerCase() === normilizedData,
+        );
+
         const newContact = {
             ...data,
             id: uuidv4(),
         };
-        this.setState(({ contacts }) => ({
-            contacts: [newContact, ...contacts],
-        }));
+
+        dublicate
+            ? alert(`${dublicate.name} is already in contacts`)
+            : this.setState(({ contacts }) => ({
+                  contacts: [newContact, ...contacts],
+              }));
     };
 
     changeFilter = e => {
         this.setState({ filter: e.currentTarget.value });
     };
+
+    // checkDublicate = data => {
+    //     console.log(dublicate);
+    // }
 
     render() {
         const normalizedFilter = this.state.filter.toLowerCase();
