@@ -37,3 +37,14 @@ body {
     text-decoration: none;
     color: inherit;
 }
+
+.App {
+    margin-right: auto;
+    margin-left: auto;
+    width: 480px;
+}
+
+.App h1,
+.App h2 {
+    color: steelblue;
+}

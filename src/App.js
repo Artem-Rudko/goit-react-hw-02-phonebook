@@ -3,7 +3,7 @@ import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 import { v4 as uuidv4 } from 'uuid';
-// import './App.css';
+import './styles.css';
 
 class App extends Component {
     state = {
@@ -56,7 +56,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <h1>Phonebook</h1>
+                <h1 className="title">Phonebook</h1>
                 <ContactForm onSubmit={this.addNewContact} />
                 <h2>Contacts</h2>
                 <Filter
