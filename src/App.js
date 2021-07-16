@@ -38,9 +38,15 @@ class App extends Component {
         this.setState({ filter: e.currentTarget.value });
     };
 
-    // checkDublicate = data => {
-    //     console.log(dublicate);
-    // }
+    deleteContact = contactId => {
+        console.log('delete was clicked');
+        console.log(contactId);
+        this.setState(prevState => ({
+            contacts: prevState.contacts.filter(
+                contact => contact.id !== contactId,
+            ),
+        }));
+    };
 
     render() {
         const normalizedFilter = this.state.filter.toLowerCase();
@@ -57,7 +63,10 @@ class App extends Component {
                     value={this.state.filter}
                     onChange={this.changeFilter}
                 />
-                <ContactList contacts={filteredContacts} />
+                <ContactList
+                    contacts={filteredContacts}
+                    onDeleteContact={this.deleteContact}
+                />
             </div>
         );
     }
