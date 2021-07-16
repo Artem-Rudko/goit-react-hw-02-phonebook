@@ -72,9 +72,12 @@ class App extends Component {
         );
     }
 }
+App.defaultProps = {
+    contacts: [],
+};
 
 App.propTypes = {
-    contacts: PropTypes.array.isRequired,
+    contacts: PropTypes.array,
 };
 
 export default App;
