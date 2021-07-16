@@ -4,8 +4,10 @@
     font-size: 24px;
     margin-bottom: 12px;
     border-radius: 6px;
-    border: 2px solid whitesmoke;
-    color: whitesmoke;
+    border: 2px solid steelblue;
+    /* color: whitesmoke; */
+    color: steelblue;
+    background-color: whitesmoke;
 }
 
 .contactList li {

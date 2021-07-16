@@ -2,6 +2,7 @@ import { Component } from 'react';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import './styles.css';
 
@@ -71,5 +72,9 @@ class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    contacts: PropTypes.array.isRequired,
+};
 
 export default App;
