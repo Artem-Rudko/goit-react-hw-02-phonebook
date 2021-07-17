@@ -1,7 +1,6 @@
 .inputForm {
     display: flex;
     flex-direction: column;
-    width: 480px;
     border-radius: 6px;
     border: 2px solid whitesmoke;
     padding: 24px;
@@ -17,6 +16,7 @@
 }
 
 input {
+    width: 300px;
     border-radius: 4px;
     padding: 6px 12px;
     outline: none;
@@ -25,7 +25,7 @@ input {
 
 .submitBtn {
     display: block;
-    width: 288px;
+    width: 300px;
     border-radius: 4px;
     padding: 6px 12px;
     margin-left: auto;
